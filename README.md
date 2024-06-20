@@ -70,7 +70,9 @@ Change the ```max-length``` to ```200``` so that we can insert this payload ```<
 
 Keep an eye on the HTTP history 
 
-after clicking on sign guestbook you can observe that we get two requests with two different methods ```get``` and ```post``` and both contain ```referer``` header this means the password has been changed so we will check it by using test credentials.
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/cff89b31-2e58-4e67-8502-5ca574d6e5c7)
+
+After clicking on sign guestbook you can observe that we get two requests with two different methods ```get``` and ```post``` and both contain ```referer``` header this means the password has been changed so we will check it by using test credentials.
 
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/b237be69-945b-4a64-8ab4-317a57decc6e)
 
