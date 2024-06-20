@@ -13,7 +13,7 @@ Cross-Site Request Forgery (CSRF) is a type of web security vulnerability that a
 # How CSRF Works
 1)User Authentication: The user logs into a web application (e.g., a banking site) and receives an authentication token, typically stored in a cookie.
 
-2)Attack Setup: The attacker creates a malicious website or email containing a request that will be sent to the target web application. This request is crafted to perform an action on behalf of the authenticated user, such as transferring money or changing account details.
+2)Attack Setup: The attacker creates a malicious website or email containing a request that will be sent to the target web application. This request is crafted to act on behalf of the authenticated user, such as transferring money or changing account details.
 
 3)User Interaction: The user, while still logged into the target web application, visits the malicious website or clicks on a malicious link.
 
@@ -31,7 +31,7 @@ I have changed the password i.e ```12345``` we can see that the password is refl
 
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/705d57a9-1759-4cd1-9a93-92e21d1ec18b)
 
-So we can use the URL for further attack I will be creating an HTML file that will contain with anchor tag but we will be changing the password parameter from ```12345``` to ```bugbot19```
+So we can use the URL for further attacks I will be creating an HTML file that will contain with anchor tag but we will be changing the password parameter from ```12345``` to ```bugbot19```
 
 ```HTML file```
 
@@ -49,4 +49,30 @@ You can see in the URL that the password has been changed now so this means our 
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/ebb17174-e896-4d1b-9aee-4fc4dc3f90a0)
 
 You can see that ```bugbot19``` is a valid password for ```admin```
+
+# CSRF(MEDIUM)
+
+If we follow the low-level method it will not work 
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/f4a39049-0396-4143-abbe-b5495b8f0b0d)
+
+copy the URL paste it into the burp browser see the HTTP history request you can see that it does not contain ```referer``` header
+
+So we will be using the ```XSS-Stored``` low level to make it work, Let's first draft a malicious URL to change the password 
+
+I have made up this URL ```http://localhost/dvwa/vulnerabilities/csrf/?password_new=123456&password_conf=123456&Change=Change#``` where password has been changed to ```123456``` from ```bugbot19```
+
+Now we will use a script in the XSS-stored module to make it run we will need burp for this step
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/ef239e88-bc86-4089-8545-b886e2b7354b)
+
+Change the ```max-length``` to ```200``` so that we can insert this payload ```<img src=http://localhost/dvwa/vulnerabilities/csrf/?password_new=123456&password_conf=123456&Change=Change#>```
+
+Keep an eye on the HTTP history 
+
+after clicking on sign guestbook you can observe that we get two requests with two different methods ```get``` and ```post``` and both contain ```referer``` header this means the password has been changed so we will check it by using test credentials.
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/b237be69-945b-4a64-8ab4-317a57decc6e)
+
+You can see ```123456``` is valid 
 
