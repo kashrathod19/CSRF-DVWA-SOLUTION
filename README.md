@@ -78,3 +78,30 @@ After clicking on sign guestbook you can observe that we get two requests with t
 
 You can see ```123456``` is valid 
 
+# CSRF(HIGH)
+
+For this level, we cannot use the previous method first try to understand the request with the help of ```burp``` you can notice it has a csrf token 
+
+So first, we will change the password to ```admin``` and after changing the password copy the URL 
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/7d9802c8-0ea7-423f-a7dc-357ee953601f)
+
+We can see the password has been changed now draft the URL with a different token and refresh the page after refreshing ```inspect``` the page go to ```console``` and type ```document.getElementsByName("user_token")``` and press enter we will get the output in the below way
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/a593fcfd-e849-42d9-acc9-0320de6cdc50)
+
+Expand it you will find a token in ```deafaultvalue``` variable 
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/97d7600d-822f-4989-b007-317c82fc8e45)
+
+Copy the token and replace it with the previous token 
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/e0b90bf6-4048-4d54-a89d-3c5a65a99fe9)
+
+Send the drafted URL to the browser and you can observe that the password is changed you can also try it on test credentials 
+
+![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/6a894e46-0255-49f9-ae2c-62e5ae559dec)
+
+
+
+
