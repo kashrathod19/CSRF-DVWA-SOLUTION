@@ -28,7 +28,9 @@ We can see from the above that the page contains two text fields and two buttons
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/f8676cce-c5f7-468a-b362-487f4c73466e)
 
 I have changed the password i.e ```12345``` we can see that the password is reflected in the URL 
+
 ![image](https://github.com/kashrathod19/CSRF-DVWA-SOLUTION/assets/54115061/705d57a9-1759-4cd1-9a93-92e21d1ec18b)
+
 So we can use the URL for further attack I will be creating an HTML file that will contain with anchor tag but we will be changing the password parameter from ```12345``` to ```bugbot19```
 
 ```HTML file```
